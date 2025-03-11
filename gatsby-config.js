@@ -12,7 +12,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-image`,
+      options: {
+        formats: ['auto', 'webp', 'jpg'], // Explicitly prevent AVIF
+        quality: 90,
+        placeholder: 'dominantColor',
+      },
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -86,6 +93,7 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
+              formats: ['auto', 'webp', 'jpg'], // Prevent AVIF
               tracedSVG: { color: config.colors.green },
             },
           },
