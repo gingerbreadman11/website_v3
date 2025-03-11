@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-image`,
       options: {
-        formats: ['auto', 'webp', 'jpg'], // Explicitly prevent AVIF
+        formats: ['webp', 'jpg'], // Explicitly prevent AVIF
         quality: 90,
         placeholder: 'dominantColor',
       },
@@ -24,7 +24,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ['auto', 'webp', 'jpg'], // Remove "avif" to avoid Render build error
+          formats: ['webp', 'jpg'], // Remove "avif" to avoid Render build error
           quality: 90,
           placeholder: 'dominantColor',
         },
@@ -93,7 +93,7 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
-              formats: ['auto', 'webp', 'jpg'], // Prevent AVIF
+              formats: ['webp', 'jpg'], // Prevent AVIF
               tracedSVG: { color: config.colors.green },
             },
           },
